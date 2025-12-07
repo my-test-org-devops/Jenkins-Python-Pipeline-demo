@@ -19,8 +19,8 @@ jobs:
         python-version: '3.11'
     - name: Install Python dependencies
       run: |
-        pip insatll --upgrade pip
-        pip insatll -r requirements.txt
+        pip install --upgrade pip
+        pip install -r requirements.txt
     - name: set PythonPath
       run: echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
     - name: Run tests
