@@ -1,4 +1,4 @@
-name: Build Python application
+name: Build Python python-step-level-variable application
 on: # multiple trigger when this workflow can run 
  workflow_dispatch:
  push:
