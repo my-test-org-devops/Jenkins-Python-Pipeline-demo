@@ -21,6 +21,6 @@ jobs:
         pip insatll --upgrade pip
         pip insatll -r requirements.txt
     - name: set PythonPath
-      runs: echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
+      run: echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
     - name: Run tests
       run: pytest tests --cov=app --cov-report=xml
