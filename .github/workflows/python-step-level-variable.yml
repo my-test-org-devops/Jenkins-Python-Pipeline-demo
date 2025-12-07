@@ -1,0 +1,47 @@
+name: Build Python application
+on: # multiple trigger when this workflow can run 
+ workflow_dispatch:
+ push:
+   branches:
+     - master
+ pull_request:
+   branches:
+     - master
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env: # Variable at the Job level
+      PYTHON_VERSION: 3.11
+    steps:
+    - name: clone the repo 
+      uses: actions/checkout@v6
+    - name: Insatll Python ${{ env.PYTHON_VERSION }} on runner 
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    - name: Install Python dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+  Job2: 
+    runs-on: ubuntu-latest
+    env: # Variable at the Job level
+      PYTHON_VERSION: 3.9
+    steps:
+    - name: clone the repo 
+      uses: actions/checkout@v6
+    - name: Insatll Python ${{ env.PYTHON_VERSION }} on runner 
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+  Job3: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: clone the repo 
+      uses: actions/checkout@v6
+    - name: Insatll Python  on runner
+      env: # Variable at steps level
+        PYTHON_VERSION: 3.12 
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
