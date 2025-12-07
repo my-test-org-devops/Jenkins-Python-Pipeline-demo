@@ -13,7 +13,7 @@ jobs:
     - name: clone the repo 
       uses: actions/checkout@v6
     - name: Insatll Python on runner 
-    - uses: actions/setup-python@v6
+      uses: actions/setup-python@v6
       with:
         python-version: '3.11'
     - name: Install Python dependencies
@@ -21,6 +21,6 @@ jobs:
         pip insatll --upgrade pip
         pip insatll -r requirements.txt
     - name: set PythonPath
-      runs-on: echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
+      runs: echo "PYTHONPATH"=$GITHUB_WORKSPACE >> $GITHUB_ENV
     - name: Run tests
       run: pytest tests --cov=app --cov-report=xml
