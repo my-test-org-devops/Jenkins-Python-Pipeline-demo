@@ -2,10 +2,11 @@ name: Build Python application
 on: # multiple trigger when this workflow can run 
  workflow_dispatch:
  push:
-  branches:
-    - master
+   branches:
+     - master
  pull_request:
-    - master
+   branches:
+     - master
 jobs:
   job1:
     runs-on: ubuntu-latest
