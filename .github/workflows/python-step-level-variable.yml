@@ -40,7 +40,7 @@ jobs:
     - name: clone the repo 
       uses: actions/checkout@v6
     - name: Insatll Python  on runner
-      env: # Variable at steps level
+      env: # Variable at steps level ghjk
         PYTHON_VERSION: 3.12 
       uses: actions/setup-python@v6
       with:
