@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: clone the repo 
       uses: actions/checkout@v6
-    - name: Insatll Python ${{ var.PYTHON_VERSION }} on runner 
+    - name: Insatll Python ${{ vars.PYTHON_VERSION }} on runner 
       uses: actions/setup-python@v6
       with:
         python-version: ${{ var.PYTHON_VERSION }}
